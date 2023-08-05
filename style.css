@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 490px;
+    height: 500px;
     width: 90vw;
     background-color: #272627;
     border-radius: 8px;
@@ -63,7 +63,7 @@ label {
 #peso, #altura {
     width: 280px;
     padding: 10px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     border-radius: 5px;
     border: none;
     background-color: #3f3f46;
@@ -81,7 +81,7 @@ label {
 
 .button {
     width: 280px;
-    padding: 12px;
+    padding: 10px;
     margin-bottom: 25px;
     border-radius: 5px;
     font-size: 1rem;
@@ -110,4 +110,39 @@ label {
     color: rgb(230, 230, 230);
     background-color: #272627;
     font-size: 1.1rem;
+}
+
+/************************ Media Queries ****************************/
+
+@media screen and (min-width: 700px) {
+    
+    .container {
+        width: 450px;
+    }
+
+}
+
+@media screen and (min-width: 1130px) {
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .imagem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }       
+
+    .imagem img {
+        height: 490px;
+    }
+
+    .container {
+        width: 430px;
+    }
+
 }
