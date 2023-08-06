@@ -32,6 +32,7 @@ body {
     width: 90vw;
     background-color: #272627;
     border-radius: 8px;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.336);
     font-family: var(--fonte);
 }
 
@@ -105,11 +106,12 @@ label {
     width: 280px;
     height: 85px;
     border-radius: 5px;
+    padding: 0 3px;
     border-top: 2px solid #158a42;
     border-bottom: 2px solid #158a42;
     color: rgb(230, 230, 230);
     background-color: #272627;
-    font-size: 1.1rem;
+    font-size: 18px;
 }
 
 /************************ Media Queries ****************************/
