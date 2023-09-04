@@ -1,34 +1,36 @@
 
-let botaoCalcular = document.getElementById('button');
+const button = document.querySelector('#button');
 
-function calculaImc() {
-    
-    let inputPeso = document.getElementById('peso').value;
-    let inputAltura = document.getElementById('altura').value;
-    let resultado = document.getElementById('resultado');
+button.addEventListener('click', submit = () => {
+    const peso = document.querySelector('#peso').value;
+    const altura = document.querySelector('#altura').value;
 
-    if (inputPeso == '' || inputAltura == '') {
-        resultado.textContent = 'ERRO! Preencha os campos para ter um resultado válido.'
+    const imc = getImc(peso, altura).toFixed(2);
+    const medidas = nivelPeso(imc);
+
+    if(peso == '' || altura == '') {
+        res('ERRO! Preencha todas as opções.')
     }
     else {
-        const imc = (inputPeso / (inputAltura * inputAltura)).toFixed(1);
-
-        let resposta = ''
-
-        if (imc < 18.5) {
-            resposta = 'você está abaixo do peso.'
-        }
-        else if (imc > 18.5 && imc < 25) {
-            resposta = 'seu peso está normal.'
-        }
-        else {
-            resposta = 'você está acima do peso.'
-        }
-
-        resultado.textContent = `O seu IMC é: ${imc} ${resposta}`
-        
+        res(`Seu IMC é: ${imc} (${medidas})`)
     }
+})
 
+function res(msg) {
+    const resultado = document.querySelector('#resultado');
+    resultado.innerHTML = ''
+    const paragrafo = document.createElement('p');
+    paragrafo.classList.add('paragrafo-resposta');
+    resultado.appendChild(paragrafo);
+    paragrafo.innerHTML = msg;
 }
 
-botaoCalcular.addEventListener('click', calculaImc);
+function getImc(peso, altura) {
+    return peso / (altura * altura);
+}
+
+function nivelPeso(imc) {
+    if(imc >= 24.9) {return 'Você está acima do peso.'}
+    if(imc >= 18.5) {return 'Seu peso está normal.'}
+    if(imc < 18.5) {return 'Você está abaixo do peso.'}
+}

@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 450px;
     width: 90vw;
     background-color: #272627;
     border-radius: 8px;
@@ -44,6 +44,18 @@ h1 {
     font-size: 1.7rem;
     margin-bottom: 10px;
     color: rgb(230, 230, 230);
+    position: relative;
+}
+
+h1::after {
+    position: absolute;
+    content: '';
+    background-color: #18A24D;
+    width: 8rem;
+    height: 3px;
+    bottom: 0px;
+    left: 0px; 
+    border-radius: 3px;
 }
 
 label {
@@ -99,7 +111,7 @@ label {
     transition: 0.3s;
 }
 
-.resultado {
+/*.resultado {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +124,7 @@ label {
     color: rgb(230, 230, 230);
     background-color: #272627;
     font-size: 18px;
-}
+}*/
 
 /************************ Media Queries ****************************/
 
@@ -140,7 +152,7 @@ label {
     }       
 
     .imagem img {
-        height: 490px;
+        height: 480px;
     }
 
     .container {
